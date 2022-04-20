@@ -13,12 +13,14 @@
         <th style="color: darkgreen">Sherbimi</th>
         <th style="color: darkgreen">Koha (min)</th>
       </tr>
-      <ng-container *ngFor="let service of services index as i">
+      <br>
+      <ng-container *ngFor="let service of services; index as i">
         <tr>
           <input type="checkbox" value="service" style="padding-right: 100px">
           <td>{{service}}</td>
           <td>{{servicesTime[i]}}</td>
         </tr>
+        <br>
       </ng-container>
     </table>
   </div>
