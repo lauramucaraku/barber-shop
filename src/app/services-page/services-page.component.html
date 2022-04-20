@@ -1,0 +1,25 @@
+<div style="margin-top: 100px; font-size: 150%">
+  <div class="d-flex justify-content-center">
+    <br>
+    <button mat-icon-button class="button" style="margin-left: 70px; background-color: darkgreen">
+      <span class="material-icons">person_add</span>
+    </button>
+  </div>
+  <br>
+  <div class="d-flex justify-content-center">
+    <table>
+      <tr>
+        <td></td>
+        <th style="color: darkgreen">Sherbimi</th>
+        <th style="color: darkgreen">Koha (min)</th>
+      </tr>
+      <ng-container *ngFor="let service of services index as i">
+        <tr>
+          <input type="checkbox" value="service" style="padding-right: 100px">
+          <td>{{service}}</td>
+          <td>{{servicesTime[i]}}</td>
+        </tr>
+      </ng-container>
+    </table>
+  </div>
+</div>
