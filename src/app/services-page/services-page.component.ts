@@ -10,6 +10,8 @@ export class ServicesPageComponent implements OnInit {
   services: any[];
   appointmentTime: number;
   selectedServices: any[];
+  clientName: string;
+  clientTel: string;
 
   constructor() {
     this.services = [
@@ -41,6 +43,8 @@ export class ServicesPageComponent implements OnInit {
     ];
     this.appointmentTime = 0;
     this.selectedServices = [];
+    this.clientName = '';
+    this.clientTel = '';
   }
 
   changeSelectedStatus(service: {}, index: number) {
@@ -50,7 +54,9 @@ export class ServicesPageComponent implements OnInit {
   }
 
   addAppointnment(): void {
-    alert('Takimi i shtua me sukses.');
+    alert('Takimi i shtua me sukses. Kohezgjatja e takimit do te jete '+this.appointmentTime+' min.');
+    this.clientName = (<HTMLInputElement>document.getElementById('emri')).value;
+    this.clientName = (<HTMLInputElement>document.getElementById('numriTel')).value;
   }
 
   ngOnInit(): void {

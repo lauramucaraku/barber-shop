@@ -1,4 +1,16 @@
 <div class="d-flex flex-column justify-content-center align-items-center" style="height: 100vh; background-color: slategrey">
+  <form class="example-form d-flex flex-column">
+      <mat-form-field class="example-full-width" appearance="fill">
+          <input type="text" name="emri" id="emri" matInput placeholder="Emer Mbiemer">
+          <mat-icon matSuffix>mode_edit</mat-icon>
+      </mat-form-field>
+      <mat-form-field class="example-full-width" appearance="fill">
+          <span matPrefix>+355 &nbsp;</span>
+          <input type="tel" name="cel" id="numriTel" matInput placeholder="XXXXXXXXX">
+          <mat-icon matSuffix>mode_edit</mat-icon>
+      </mat-form-field>
+  </form>
+
     <mat-selection-list #services1>
         <mat-list-option *ngFor="let service of services; index as i" (click)="changeSelectedStatus(service, i)" color="primary">
             {{service.name}} ({{service.time}} min)
