@@ -1,21 +1,24 @@
-<div class="container1">
-  <div class="d-flex justify-content-center align-items-end">
-    <button mat-mini-fab color="accent"  (click)="calculateTime()">
-      <mat-icon>add</mat-icon>
-    </button>
-  </div>
-
-  <div class="d-flex justify-content-center align-items-center">
+<div class="d-flex flex-column justify-content-center align-items-center" style="height: 100vh; background-color: slategrey">
     <mat-selection-list #services1>
-      <mat-list-option *ngFor="let service of services; index as i" (click)="changeSelectedStatus(service, i)">
-        {{service.name}} ({{service.time}} min)
-      </mat-list-option>
+        <mat-list-option *ngFor="let service of services; index as i" (click)="changeSelectedStatus(service, i)" color="primary">
+            {{service.name}} ({{service.time}} min)
+        </mat-list-option>
     </mat-selection-list>
-  </div>
-
   <p class="d-flex justify-content-center">
-    <!--  Options selected: {{services1.selectedOptions.selected.length}}-->
-    Time: {{appointmentTime}} min
+      Koha: {{appointmentTime}} min
   </p>
+  <button mat-flat-button color="primary" *ngIf="selectedServices.length===0 else notDisabled" disabled (click)="addAppointnment()">
+      Shto
+  </button>
+  <ng-template #notDisabled>
+      <button mat-flat-button color="primary" (click)="addAppointnment()">Shto</button>
+  </ng-template>
 </div>
+
+
+
+
+
+
+
 

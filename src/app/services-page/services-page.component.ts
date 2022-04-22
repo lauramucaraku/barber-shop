@@ -9,6 +9,7 @@ export class ServicesPageComponent implements OnInit {
 
   services: any[];
   appointmentTime: number;
+  selectedServices: any[];
 
   constructor() {
     this.services = [
@@ -39,21 +40,20 @@ export class ServicesPageComponent implements OnInit {
       }
     ];
     this.appointmentTime = 0;
+    this.selectedServices = [];
   }
 
   changeSelectedStatus(service: {}, index: number) {
-    // console.log(service);
     this.services[index].isSelected = ! this.services[index].isSelected;
-    // console.log(service);
     this.appointmentTime += this.services[index].time;
+    this.selectedServices.push(service);
   }
 
-  calculateTime() {
-    console.log(this.appointmentTime);
+  addAppointnment(): void {
+    alert('Takimi i shtua me sukses.');
   }
 
   ngOnInit(): void {
   }
 
 }
-
