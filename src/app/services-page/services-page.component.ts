@@ -1,31 +1,3 @@
-// import { Component, OnInit } from '@angular/core';
-//
-// @Component({
-//   selector: 'app-services-page',
-//   templateUrl: './services-page.component.html',
-//   styleUrls: ['./services-page.component.css']
-// })
-// export class ServicesPageComponent implements OnInit {
-//
-//   services: string[];
-//   servicesTime: number[];
-//
-//   constructor() {
-//     this.services = [
-//       'Qethje',
-//       'Rruajtje',
-//       'Rruajtje me stilim',
-//       'Larje',
-//       'Stilim flokesh'
-//     ];
-//     this.servicesTime = [45, 5, 10, 3, 3];
-//   }
-//
-//   ngOnInit(): void {
-//   }
-//
-// }
-
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -37,6 +9,9 @@ export class ServicesPageComponent implements OnInit {
 
   services: any[];
   appointmentTime: number;
+  selectedServices: any[];
+  clientName: string;
+  clientTel: string;
 
   constructor() {
     this.services = [
@@ -67,21 +42,24 @@ export class ServicesPageComponent implements OnInit {
       }
     ];
     this.appointmentTime = 0;
+    this.selectedServices = [];
+    this.clientName = '';
+    this.clientTel = '';
   }
 
   changeSelectedStatus(service: {}, index: number) {
-    // console.log(service);
     this.services[index].isSelected = ! this.services[index].isSelected;
-    // console.log(service);
     this.appointmentTime += this.services[index].time;
+    this.selectedServices.push(service);
   }
 
-  calculateTime() {
-    console.log(this.appointmentTime);
+  addAppointnment(): void {
+    alert('Takimi i shtua me sukses. Kohezgjatja e takimit do te jete '+this.appointmentTime+' min.');
+    this.clientName = (<HTMLInputElement>document.getElementById('emri')).value;
+    this.clientName = (<HTMLInputElement>document.getElementById('numriTel')).value;
   }
 
   ngOnInit(): void {
   }
 
 }
-

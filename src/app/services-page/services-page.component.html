@@ -1,49 +1,36 @@
-<!--<div style="margin-top: 100px; font-size: 150%">-->
-<!--  <div class="d-flex justify-content-center">-->
-<!--    <br>-->
-<!--    <button mat-icon-button class="button" style="margin-left: 70px; background-color: darkgreen">-->
-<!--      <span class="material-icons">person_add</span>-->
-<!--    </button>-->
-<!--  </div>-->
-<!--  <br>-->
-<!--  <div class="d-flex justify-content-center">-->
-<!--    <table>-->
-<!--      <tr>-->
-<!--        <td></td>-->
-<!--        <th style="color: darkgreen">Sherbimi</th>-->
-<!--        <th style="color: darkgreen">Koha (min)</th>-->
-<!--      </tr>-->
-<!--      <br>-->
-<!--      <ng-container *ngFor="let service of services; index as i">-->
-<!--        <tr>-->
-<!--          <input type="checkbox" value="service" style="padding-right: 100px">-->
-<!--          <td>{{service}}</td>-->
-<!--          <td>{{servicesTime[i]}}</td>-->
-<!--        </tr>-->
-<!--        <br>-->
-<!--      </ng-container>-->
-<!--    </table>-->
-<!--  </div>-->
-<!--</div>-->
+<div class="d-flex flex-column justify-content-center align-items-center" style="height: 100vh; background-color: slategrey">
+  <form class="example-form d-flex flex-column">
+      <mat-form-field class="example-full-width" appearance="fill">
+          <input type="text" name="emri" id="emri" matInput placeholder="Emer Mbiemer">
+          <mat-icon matSuffix>mode_edit</mat-icon>
+      </mat-form-field>
+      <mat-form-field class="example-full-width" appearance="fill">
+          <span matPrefix>+355 &nbsp;</span>
+          <input type="tel" name="cel" id="numriTel" matInput placeholder="XXXXXXXXX">
+          <mat-icon matSuffix>mode_edit</mat-icon>
+      </mat-form-field>
+  </form>
 
-<div class="container1">
-  <div class="d-flex justify-content-center align-items-end">
-    <button mat-mini-fab color="accent"  (click)="calculateTime()">
-      <mat-icon>add</mat-icon>
-    </button>
-  </div>
-
-  <div class="d-flex justify-content-center align-items-center">
     <mat-selection-list #services1>
-      <mat-list-option *ngFor="let service of services; index as i" (click)="changeSelectedStatus(service, i)">
-        {{service.name}} ({{service.time}} min)
-      </mat-list-option>
+        <mat-list-option *ngFor="let service of services; index as i" (click)="changeSelectedStatus(service, i)" color="primary">
+            {{service.name}} ({{service.time}} min)
+        </mat-list-option>
     </mat-selection-list>
-  </div>
-
   <p class="d-flex justify-content-center">
-    <!--  Options selected: {{services1.selectedOptions.selected.length}}-->
-    Time: {{appointmentTime}} min
+      Koha: {{appointmentTime}} min
   </p>
+  <button mat-flat-button color="primary" *ngIf="selectedServices.length===0 else notDisabled" disabled (click)="addAppointnment()">
+      Shto
+  </button>
+  <ng-template #notDisabled>
+      <button mat-flat-button color="primary" (click)="addAppointnment()">Shto</button>
+  </ng-template>
 </div>
+
+
+
+
+
+
+
 
