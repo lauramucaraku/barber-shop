@@ -10,13 +10,15 @@ import { MatIconModule } from "@angular/material/icon";
 import { MatButtonModule } from "@angular/material/button";
 import { MatListModule } from "@angular/material/list";
 import {MatInputModule} from '@angular/material/input';
+import { NavbarComponent } from './navbar/navbar.component';
 
 // import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ServicesPageComponent
+    ServicesPageComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
