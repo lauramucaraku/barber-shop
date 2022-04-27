@@ -12,6 +12,7 @@ import { MatButtonModule } from "@angular/material/button";
 import { MatListModule } from "@angular/material/list";
 import {MatInputModule} from '@angular/material/input';
 import { NavbarComponent } from './navbar/navbar.component';
+import { BodyComponent } from './body/body.component';
 
 // import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
@@ -19,7 +20,8 @@ import { NavbarComponent } from './navbar/navbar.component';
   declarations: [
     AppComponent,
     ServicesPageComponent,
-    NavbarComponent
+    NavbarComponent,
+    BodyComponent
   ],
   imports: [
     BrowserModule,
