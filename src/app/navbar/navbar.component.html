@@ -1,13 +1,22 @@
-<mat-toolbar color="primary" class="mat-elevation-z8">
-  <span><mat-icon>barbershop</mat-icon>Barber Shop</span>
-  <div class="spacer"></div>
 
 
-  <a mat-button routerLink="home">HOME</a>
-  <a mat-button routerLink="services">SERVICES</a>
-  <a mat-button routerLink="location">LOCATION</a>
-  <a mat-button routerLink="aboutus">ABOUT US</a>
-  <a mat-raised-button color="accent" routerLink="login">LOG IN</a>
 
+<div class="navbar" [ngClass]="collapsed ? 'navbar-collapsed':''">
 
-</mat-toolbar>
+  <div class="logo-container">
+    <button class="logo">A</button>
+    <div class="logo-text" *ngIf="collapsed">Angular</div>
+    <button class="btn-close" *ngIf="collapsed">
+      <i class="fal fa-times close-icon"></i>
+    </button>
+  </div>
+  <ul class="navbar-nav">
+    <li class="navbar-nav-item" *ngFor="let data of navData">
+      <a  class="navbar-nav-link" [routerLink]="[data.routeLink]">
+        <i class="navbar-link-icon" [class]="data.icon"></i>
+        <span class="navbar-link-text" *ngIf="collapsed">{{data.label}}</span>
+      </a>
+    </li>
+  </ul>
+</div>
+
