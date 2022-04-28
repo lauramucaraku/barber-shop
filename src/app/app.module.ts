@@ -16,6 +16,7 @@ import { BodyComponent } from './body/body.component';
 import { HomeComponent } from './home/home.component';
 import { ScheduleComponent } from './schedule/schedule.component';
 import { LoginComponent } from './login/login.component';
+import { SettingsComponent } from './settings/settings.component';
 
 // import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
@@ -27,7 +28,8 @@ import { LoginComponent } from './login/login.component';
     BodyComponent,
     HomeComponent,
     ScheduleComponent,
-    LoginComponent
+    LoginComponent,
+    SettingsComponent
   ],
   imports: [
     BrowserModule,
