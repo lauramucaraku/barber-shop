@@ -1,2 +1,5 @@
 <app-navbar (onToggleNavBar)="onToggleNavBar($event)"></app-navbar>
-
+<app-body
+  [collapsed]="isNavBarCollapsed"
+  [screenWidth]="screenWidth"
+></app-body>
