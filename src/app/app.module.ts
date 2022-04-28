@@ -13,6 +13,7 @@ import { MatListModule } from "@angular/material/list";
 import {MatInputModule} from '@angular/material/input';
 import { NavbarComponent } from './navbar/navbar.component';
 import { BodyComponent } from './body/body.component';
+import { HomeComponent } from './home/home.component';
 
 // import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
@@ -21,7 +22,8 @@ import { BodyComponent } from './body/body.component';
     AppComponent,
     ServicesPageComponent,
     NavbarComponent,
-    BodyComponent
+    BodyComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
