@@ -14,6 +14,7 @@ import {MatInputModule} from '@angular/material/input';
 import { NavbarComponent } from './navbar/navbar.component';
 import { BodyComponent } from './body/body.component';
 import { HomeComponent } from './home/home.component';
+import { ScheduleComponent } from './schedule/schedule.component';
 
 // import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
@@ -23,7 +24,8 @@ import { HomeComponent } from './home/home.component';
     ServicesPageComponent,
     NavbarComponent,
     BodyComponent,
-    HomeComponent
+    HomeComponent,
+    ScheduleComponent
   ],
   imports: [
     BrowserModule,
