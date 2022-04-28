@@ -15,6 +15,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { BodyComponent } from './body/body.component';
 import { HomeComponent } from './home/home.component';
 import { ScheduleComponent } from './schedule/schedule.component';
+import { LoginComponent } from './login/login.component';
 
 // import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
@@ -25,7 +26,8 @@ import { ScheduleComponent } from './schedule/schedule.component';
     NavbarComponent,
     BodyComponent,
     HomeComponent,
-    ScheduleComponent
+    ScheduleComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
