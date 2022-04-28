@@ -49,8 +49,13 @@ export class ServicesPageComponent implements OnInit {
 
   changeSelectedStatus(service: {}, index: number) {
     this.services[index].isSelected = ! this.services[index].isSelected;
-    this.appointmentTime += this.services[index].time;
-    this.selectedServices.push(service);
+    if(this.services[index].isSelected) {
+      this.appointmentTime += this.services[index].time;
+      this.selectedServices.push(service);
+    } else if (!this.services[index].isSelected) {
+      this.appointmentTime -= this.services[index].time;
+      this.selectedServices.push(service);
+    }
   }
 
   addAppointnment(): void {
