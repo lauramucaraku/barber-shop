@@ -1,12 +1,11 @@
 
 
-
 <div class="navbar" [ngClass]="collapsed ? 'navbar-collapsed':''">
 
   <div class="logo-container">
-    <button class="logo">A</button>
+    <button class="logo" (click)="toogleCollapse()">A</button>
     <div class="logo-text" *ngIf="collapsed">Angular</div>
-    <button class="btn-close" *ngIf="collapsed">
+    <button class="btn-close" *ngIf="collapsed" (click)="closeNavbar()">
       <i class="fal fa-times close-icon"></i>
     </button>
   </div>
