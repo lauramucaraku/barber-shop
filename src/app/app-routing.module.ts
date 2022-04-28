@@ -4,7 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 import {ServicesPageComponent} from "./services-page/services-page.component";
 
 const routes: Routes = [
-  {path:'', redirectTo: 'services', pathMatch: 'full'},
+  {path:'', redirectTo: 'services', pathMatch: 'full'}, //home
   {path:"services", component:ServicesPageComponent}
 
 ];

@@ -4,16 +4,21 @@
 
   <div class="logo-container">
     <button class="logo" (click)="toogleCollapse()">A</button>
-    <div class="logo-text" *ngIf="collapsed">Angular</div>
-    <button class="btn-close" *ngIf="collapsed" (click)="closeNavbar()">
+    <div class="logo-text" @fadeInOut *ngIf="collapsed">Angular</div>
+    <button class="btn-close" @rotate *ngIf="collapsed" (click)="closeNavbar()">
       <i class="fal fa-times close-icon"></i>
     </button>
   </div>
   <ul class="navbar-nav">
     <li class="navbar-nav-item" *ngFor="let data of navData">
-      <a  class="navbar-nav-link" [routerLink]="[data.routeLink]">
+      <a  class="navbar-nav-link" [routerLink]="[data.routeLink]"
+        routerLinkActive="active"
+          [routerLinkActiveOptions]="{exact: true}"
+      >
         <i class="navbar-link-icon" [class]="data.icon"></i>
-        <span class="navbar-link-text" *ngIf="collapsed">{{data.label}}</span>
+        <span class="navbar-link-text" @fadeInOut *ngIf="collapsed">
+          {{data.label}}
+        </span>
       </a>
     </li>
   </ul>
