@@ -1,1 +1,10 @@
-<p>home works!</p>
+<h3 class="mainText">Mire se erdhet ne 'Barber Shop'!</h3>
+<p class="mainText">Shfletoni galerine per te pare disa nga modelet qe ne kemi krijuar.</p>
+<div class="card table-responsive-sm" *ngFor="let i of nrOfPictures">
+  <img src="{{i.imgSrc}}"
+       class="card-img-top" alt="No image">
+  <div class="card-body">
+    <p class="card-text">{{i.title}}</p>
+  </div>
+</div>
+<p class="mainText">Per cdo model qe deshironi, te ngjashem me fotot apo jo, jeni vetem nje telefonate larg nesh. :)</p><br>
