@@ -1,5 +1,4 @@
-<div class="d-flex flex-column justify-content-center align-items-center" style="height: 100vh; background-color: slategrey">
-  <form class="example-form d-flex flex-column">
+<form class="example-form d-flex flex-column table-responsive-sm">
       <mat-form-field class="example-full-width" appearance="fill">
           <input type="text" name="emri" id="emri" matInput placeholder="Emer Mbiemer">
           <mat-icon matSuffix>mode_edit</mat-icon>
@@ -19,13 +18,14 @@
   <p class="d-flex justify-content-center">
       Koha: {{appointmentTime}} min
   </p>
+<div align="center">
   <button mat-flat-button color="primary" *ngIf="selectedServices.length===0 else notDisabled" disabled (click)="addAppointnment()">
       Shto
   </button>
-  <ng-template #notDisabled>
+</div>
+  <ng-template #notDisabled align="center">
       <button mat-flat-button color="primary" (click)="addAppointnment()">Shto</button>
   </ng-template>
-</div>
 
 
 
