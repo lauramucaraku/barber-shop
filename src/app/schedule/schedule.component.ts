@@ -152,15 +152,15 @@ export class ScheduleComponent implements OnInit {
         this.myEvents = [...this.myEvents];
       }
     },
-//   //   responsive: {
-//   //     medium: {
-//   //       display: 'anchored',
-//   //       width: 400,
-//   //       fullScreen: false,
-//   //       touchUi: false
-//   //     }
-//   //   }
-//   // };
+    responsive: {
+      medium: {
+        display: 'anchored',
+        width: 400,
+        fullScreen: false,
+        touchUi: false
+      }
+    }
+  };
 //   // datePickerControls = ['date'];
 //   // datePickerResponsive: any = {
 //   //   medium: {
