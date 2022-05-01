@@ -256,27 +256,27 @@ export class ScheduleComponent implements OnInit {
     this.popup.close();
   }
 
-//   // selectColor(color: string): void {
-//   //   this.tempColor = color;
-//   // }
-//   //
-//   // openColorPicker(ev: any): void {
-//   //   this.selectColor(this.selectedColor || '');
-//   //   this.colorAnchor = ev.currentTarget;
-//   //   this.colorPicker.open();
-//   // }
-//   //
-//   // changeColor(ev: any): void {
-//   //   const color = ev.currentTarget.getAttribute('data-value');
-//   //   this.selectColor(color);
-//   //
-//   //   if (!this.colorPicker.s.buttons.length) {
-//   //     this.selectedColor = color;
-//   //     this.colorPicker.close();
-//   //   }
-//   // }
-//
-//
+  selectColor(color: string): void {
+    this.tempColor = color;
+  }
+
+  openColorPicker(ev: any): void {
+    this.selectColor(this.selectedColor || '');
+    this.colorAnchor = ev.currentTarget;
+    this.colorPicker.open();
+  }
+
+  changeColor(ev: any): void {
+    const color = ev.currentTarget.getAttribute('data-value');
+    this.selectColor(color);
+
+    if (!this.colorPicker.s.buttons.length) {
+      this.selectedColor = color;
+      this.colorPicker.close();
+    }
+  }
+
+
 
 
 
