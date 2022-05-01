@@ -161,20 +161,20 @@ export class ScheduleComponent implements OnInit {
       }
     }
   };
-//   // datePickerControls = ['date'];
-//   // datePickerResponsive: any = {
-//   //   medium: {
-//   //     controls: ['calendar'],
-//   //     touchUi: false
-//   //   }
-//   // };
-//   // datetimePickerControls = ['datetime'];
-//   // datetimePickerResponsive = {
-//   //   medium: {
-//   //     controls: ['calendar', 'time'],
-//   //     touchUi: false
-//   //   }
-//   // };
+  datePickerControls = ['date'];
+  datePickerResponsive: any = {
+    medium: {
+      controls: ['calendar'],
+      touchUi: false
+    }
+  };
+  datetimePickerControls = ['datetime'];
+  datetimePickerResponsive = {
+    medium: {
+      controls: ['calendar', 'time'],
+      touchUi: false
+    }
+  };
 //   // datePickerOptions: MbscDatepickerOptions = {
 //   //   select: 'range',
 //   //   showRangeLabels: false,
