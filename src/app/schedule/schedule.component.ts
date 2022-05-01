@@ -118,40 +118,40 @@ export class ScheduleComponent implements OnInit {
         this.deleteEvent(args.event);
       });
     },
-//   //   onEventUpdated: () => {
-//   //     // here you can update the event in your storage as well, after drag & drop or resize
-//   //     // ...
-//   //   }
-//   // };
-//   // popupHeaderText!: string;
-//   // popupAnchor: HTMLElement | undefined;
-//   // popupAddButtons = ['cancel', {
-//   //   handler: () => {
-//   //     this.saveEvent();
-//   //   },
-//   //   keyCode: 'enter',
-//   //   text: 'Add',
-//   //   cssClass: 'mbsc-popup-button-primary'
-//   // }];
-//   // popupEditButtons = ['cancel', {
-//   //   handler: () => {
-//   //     this.saveEvent();
-//   //   },
-//   //   keyCode: 'enter',
-//   //   text: 'Save',
-//   //   cssClass: 'mbsc-popup-button-primary'
-//   // }];
-//   // popupButtons: any = [];
-//   // popupOptions: MbscPopupOptions = {
-//   //   display: 'bottom',
-//   //   contentPadding: false,
-//   //   fullScreen: true,
-//   //   onClose: () => {
-//   //     if (!this.isEdit) {
-//   //       // refresh the list, if add popup was canceled, to remove the temporary event
-//   //       this.myEvents = [...this.myEvents];
-//   //     }
-//   //   },
+    onEventUpdated: () => {
+      // mund te besh update eventin ne storage pasi ta kesh ber edit
+      // ...
+    }
+  };
+  popupHeaderText!: string;
+  popupAnchor: HTMLElement | undefined;
+  popupAddButtons = ['cancel', {
+    handler: () => {
+      this.saveEvent();
+    },
+    keyCode: 'enter',
+    text: 'Add',
+    cssClass: 'mbsc-popup-button-primary'
+  }];
+  popupEditButtons = ['cancel', {
+    handler: () => {
+      this.saveEvent();
+    },
+    keyCode: 'enter',
+    text: 'Save',
+    cssClass: 'mbsc-popup-button-primary'
+  }];
+  popupButtons: any = [];
+  popupOptions: MbscPopupOptions = {
+    display: 'bottom',
+    contentPadding: false,
+    fullScreen: true,
+    onClose: () => {
+      if (!this.isEdit) {
+        // refresh the list, if add popup was canceled, to remove the temporary event
+        this.myEvents = [...this.myEvents];
+      }
+    },
 //   //   responsive: {
 //   //     medium: {
 //   //       display: 'anchored',
