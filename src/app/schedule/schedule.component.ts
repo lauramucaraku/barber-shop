@@ -260,6 +260,7 @@ export class ScheduleComponent implements OnInit {
     this.tempColor = color;
   }
 
+
   openColorPicker(ev: any): void {
     this.selectColor(this.selectedColor || '');
     this.colorAnchor = ev.currentTarget;
@@ -275,9 +276,6 @@ export class ScheduleComponent implements OnInit {
       this.colorPicker.close();
     }
   }
-
-
-
 
 
 ngOnInit(): void {
