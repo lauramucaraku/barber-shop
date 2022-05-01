@@ -87,20 +87,18 @@ export class ScheduleComponent implements OnInit {
     },
 
 
-//   //
-//   //
-//   //   onEventClick: (args) => {
-//   //     this.isEdit = true;
-//   //     this.tempEvent = args.event;
-//   //     // fill popup form with event data
-//   //     this.loadPopupForm(args.event);
-//   //     // set popup options
-//   //     this.popupHeaderText = 'Edit event';
-//   //     this.popupButtons = this.popupEditButtons;
-//   //     this.popupAnchor = args.domEvent.currentTarget;
-//   //     // open the popup
-//   //     this.popup.open();
-//   //   },
+    onEventClick: (args) => {
+      this.isEdit = true;
+      this.tempEvent = args.event;
+      // fill popup form with event data
+      this.loadPopupForm(args.event);
+      // set popup options
+      this.popupHeaderText = 'Edit event';
+      this.popupButtons = this.popupEditButtons;
+      this.popupAnchor = args.domEvent.currentTarget;
+      // open the popup
+      this.popup.open();
+    },
 //   //   onEventCreated: (args) => {
 //   //     setTimeout(() => {
 //   //       this.isEdit = false;
