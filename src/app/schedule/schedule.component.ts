@@ -205,14 +205,14 @@ export class ScheduleComponent implements OnInit {
       }
     }
   };
-//   // loadPopupForm(event: MbscCalendarEvent): void {
-//   //   this.popupEventTitle = event.title;
-//   //   this.popupEventDescription = event['description'];
-//   //   this.popupEventDates = [event.start, event.end];
-//   //   this.popupEventAllDay = event.allDay || false;
-//   //   this.popupEventStatus = event['status'] || 'busy';
-//   //   this.selectedColor = event.color || '';
-//   // }
+  loadPopupForm(event: MbscCalendarEvent): void {
+    this.popupEventTitle = event.title;
+    this.popupEventDescription = event['description'];
+    this.popupEventDates = [event.start, event.end];
+    this.popupEventAllDay = event.allDay || false;
+    this.popupEventStatus = event['status'] || 'busy';
+    this.selectedColor = event.color || '';
+  }
 //   // saveEvent(): void {
 //   //   this.tempEvent.title = this.popupEventTitle;
 //   //   this.tempEvent['description'] = this.popupEventDescription;
