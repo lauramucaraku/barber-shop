@@ -237,25 +237,25 @@ export class ScheduleComponent implements OnInit {
     // close the popup
     this.popup.close();
   }
-//   // deleteEvent(event: MbscCalendarEvent): void {
-//   //   this.myEvents = this.myEvents.filter(item => item.id !== event.id);
-//   //   this.notify.snackbar({
-//   //     button: {
-//   //       action: () => {
-//   //         this.myEvents = [...this.myEvents, event];
-//   //       },
-//   //       text: 'Undo'
-//   //     },
-//   //     message: 'Event deleted'
-//   //   });
-//   //   // here you can delete the event from your storage as well
-//   //   // ...
-//   // }
-//   // onDeleteClick(): void {
-//   //   this.deleteEvent(this.tempEvent);
-//   //   this.popup.close();
-//   // }
-//   //
+  deleteEvent(event: MbscCalendarEvent): void {
+    this.myEvents = this.myEvents.filter(item => item.id !== event.id);
+    this.notify.snackbar({
+      button: {
+        action: () => {
+          this.myEvents = [...this.myEvents, event];
+        },
+        text: 'Undo'
+      },
+      message: 'Event deleted'
+    });
+    // here you can delete the event from your storage as well
+    // ...
+  }
+  onDeleteClick(): void {
+    this.deleteEvent(this.tempEvent);
+    this.popup.close();
+  }
+
 //   // selectColor(color: string): void {
 //   //   this.tempColor = color;
 //   // }
