@@ -76,17 +76,17 @@ export class ScheduleComponent implements OnInit {
     color: '#f44437'
   }];
 
-//   // tempEvent!: MbscCalendarEvent;
-//   // calendarOptions: MbscEventcalendarOptions = {
-//   //   clickToCreate: 'double',
-//   //   dragToCreate: true,
-//   //   dragToMove: true,
-//   //   dragToResize: true,
-//   //   view: {
-//   //     schedule: { type: 'week' }
-//   //   },
-//   //
-//   //
+  tempEvent!: MbscCalendarEvent;
+  calendarOptions: MbscEventcalendarOptions = {
+    clickToCreate: 'double',
+    dragToCreate: true,
+    dragToMove: true,
+    dragToResize: true,
+    view: {
+      schedule: { type: 'week' }
+    },
+
+
 //   //
 //   //
 //   //   onEventClick: (args) => {
