@@ -213,30 +213,30 @@ export class ScheduleComponent implements OnInit {
     this.popupEventStatus = event['status'] || 'busy';
     this.selectedColor = event.color || '';
   }
-//   // saveEvent(): void {
-//   //   this.tempEvent.title = this.popupEventTitle;
-//   //   this.tempEvent['description'] = this.popupEventDescription;
-//   //   this.tempEvent.start = this.popupEventDates[0];
-//   //   this.tempEvent.end = this.popupEventDates[1];
-//   //   this.tempEvent.allDay = this.popupEventAllDay;
-//   //   this.tempEvent['status'] = this.popupEventStatus;
-//   //   this.tempEvent.color = this.selectedColor;
-//   //   if (this.isEdit) {
-//   //     // update the event in the list
-//   //     this.myEvents = [...this.myEvents];
-//   //     // here you can update the event in your storage as well
-//   //     // ...
-//   //   } else {
-//   //     // add the new event to the list
-//   //     this.myEvents = [...this.myEvents, this.tempEvent];
-//   //     // here you can add the event to your storage as well
-//   //     // ...
-//   //   }
-//   //   // navigate the calendar
-//   //   this.calendarSelectedDate = this.popupEventDates[0];
-//   //   // close the popup
-//   //   this.popup.close();
-//   // }
+  saveEvent(): void {
+    this.tempEvent.title = this.popupEventTitle;
+    this.tempEvent['description'] = this.popupEventDescription;
+    this.tempEvent.start = this.popupEventDates[0];
+    this.tempEvent.end = this.popupEventDates[1];
+    this.tempEvent.allDay = this.popupEventAllDay;
+    this.tempEvent['status'] = this.popupEventStatus;
+    this.tempEvent.color = this.selectedColor;
+    if (this.isEdit) {
+      // update the event in the list
+      this.myEvents = [...this.myEvents];
+      // here you can update the event in your storage as well
+      // ...
+    } else {
+      // add the new event to the list
+      this.myEvents = [...this.myEvents, this.tempEvent];
+      // here you can add the event to your storage as well
+      // ...
+    }
+    // navigate the calendar
+    this.calendarSelectedDate = this.popupEventDates[0];
+    // close the popup
+    this.popup.close();
+  }
 //   // deleteEvent(event: MbscCalendarEvent): void {
 //   //   this.myEvents = this.myEvents.filter(item => item.id !== event.id);
 //   //   this.notify.snackbar({
