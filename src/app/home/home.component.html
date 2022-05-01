@@ -1,10 +1,49 @@
-<h3 class="mainText">Mire se erdhet ne 'Barber Shop'!</h3>
-<p class="mainText">Shfletoni galerine per te pare disa nga modelet qe ne kemi krijuar.</p>
+<!--<h3 class="header">Barber Shop</h3>-->
 <div class="card table-responsive-sm" *ngFor="let i of nrOfPictures">
   <img src="{{i.imgSrc}}"
        class="card-img-top" alt="No image">
   <div class="card-body">
-    <p class="card-text">{{i.title}}</p>
+    <p class="card-text fw-bold">{{i.title}}</p>
+    <p class="card-text">{{i.description}}</p>
   </div>
 </div>
-<p class="mainText">Per cdo model qe deshironi, te ngjashem me fotot apo jo, jeni vetem nje telefonate larg nesh. :)</p><br>
+
+<!--<footer class="text-center text-lg-start bg-light text-muted">-->
+<footer class="table-responsive-sm">
+  <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
+    <div>
+      <a href="" class="me-4 text-reset">
+        <i class="fab fa-facebook-f"></i>
+      </a>
+      <a href="" class="me-4 text-reset">
+        <i class="fab fa-twitter"></i>
+      </a>
+      <a href="" class="me-4 text-reset">
+        <i class="fab fa-instagram"></i>
+      </a>
+    </div>
+  </section>
+
+  <section class="">
+    <div class="container text-center text-md-start mt-5">
+      <div class="row mt-3">
+        <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+          <h6 class="text-uppercase fw-bold mb-4">
+            Format e kontaktit:
+          </h6>
+          <p><i class="fas fa-home me-3"></i>Astir, perballe Vodafone, Tirane</p>
+          <p>
+            <i class="fas fa-envelope me-3"></i>
+            barbershop@gmail.com
+          </p>
+          <p><i class="fas fa-phone me-3"></i> +355 69 629 9432</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
+    © 2022 Copyright:
+    <a class="text-reset fw-bold" href="">Barbershop.com</a>
+  </div>
+</footer>
