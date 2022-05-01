@@ -198,13 +198,13 @@ export class ScheduleComponent implements OnInit {
         cssClass: 'mbsc-popup-button-primary'
       }
     ],
-//   //   responsive: {
-//   //     medium: {
-//   //       display: 'anchored',
-//   //       buttons: [],
-//   //     }
-//   //   }
-//   // };
+    responsive: {
+      medium: {
+        display: 'anchored',
+        buttons: [],
+      }
+    }
+  };
 //   // loadPopupForm(event: MbscCalendarEvent): void {
 //   //   this.popupEventTitle = event.title;
 //   //   this.popupEventDescription = event['description'];
