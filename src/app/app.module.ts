@@ -20,6 +20,9 @@ import { ScheduleComponent } from './schedule/schedule.component';
 import { LoginComponent } from './login/login.component';
 import { SettingsComponent } from './settings/settings.component';
 
+import { HttpClientModule, HttpClientJsonpModule } from '@angular/common/http';
+
+
 // import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
@@ -33,9 +36,9 @@ import { SettingsComponent } from './settings/settings.component';
     LoginComponent,
     SettingsComponent
   ],
-  imports: [ 
-    FormsModule,  
-    MbscModule, 
+  imports: [
+    FormsModule,
+    MbscModule,
     BrowserModule,
     AppRoutingModule,
     NgbModule,
@@ -44,7 +47,9 @@ import { SettingsComponent } from './settings/settings.component';
     MatIconModule,
     MatListModule,
     MatInputModule,
-    MatToolbarModule
+    MatToolbarModule,
+    HttpClientModule,
+    HttpClientJsonpModule
     // NgbModule
   ],
   providers: [],
