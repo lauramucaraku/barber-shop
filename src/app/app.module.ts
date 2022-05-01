@@ -1,5 +1,5 @@
-import { FormsModule } from '@angular/forms';
 import { MbscModule } from '@mobiscroll/angular';
+import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -36,9 +36,9 @@ import { HttpClientModule, HttpClientJsonpModule } from '@angular/common/http';
     LoginComponent,
     SettingsComponent
   ],
-  imports: [
+  imports: [ 
+    MbscModule, 
     FormsModule,
-    MbscModule,
     BrowserModule,
     AppRoutingModule,
     NgbModule,
