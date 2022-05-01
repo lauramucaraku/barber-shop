@@ -175,29 +175,29 @@ export class ScheduleComponent implements OnInit {
       touchUi: false
     }
   };
-//   // datePickerOptions: MbscDatepickerOptions = {
-//   //   select: 'range',
-//   //   showRangeLabels: false,
-//   //   touchUi: true
-//   // };
-//   // isEdit = false;
-//   // colorOptions: MbscPopupOptions = {
-//   //   display: 'bottom',
-//   //   contentPadding: false,
-//   //   showArrow: false,
-//   //   showOverlay: false,
-//   //   buttons: [
-//   //     'cancel',
-//   //     {
-//   //       text: 'Set',
-//   //       keyCode: 'enter',
-//   //       handler: () => {
-//   //         this.selectedColor = this.tempColor;
-//   //         this.colorPicker.close();
-//   //       },
-//   //       cssClass: 'mbsc-popup-button-primary'
-//   //     }
-//   //   ],
+  datePickerOptions: MbscDatepickerOptions = {
+    select: 'range',
+    showRangeLabels: false,
+    touchUi: true
+  };
+  isEdit = false;
+  colorOptions: MbscPopupOptions = {
+    display: 'bottom',
+    contentPadding: false,
+    showArrow: false,
+    showOverlay: false,
+    buttons: [
+      'cancel',
+      {
+        text: 'Set',
+        keyCode: 'enter',
+        handler: () => {
+          this.selectedColor = this.tempColor;
+          this.colorPicker.close();
+        },
+        cssClass: 'mbsc-popup-button-primary'
+      }
+    ],
 //   //   responsive: {
 //   //     medium: {
 //   //       display: 'anchored',
