@@ -99,25 +99,25 @@ export class ScheduleComponent implements OnInit {
       // open the popup
       this.popup.open();
     },
-//   //   onEventCreated: (args) => {
-//   //     setTimeout(() => {
-//   //       this.isEdit = false;
-//   //       this.tempEvent = args.event;
-//   //       // fill popup form with event data
-//   //       this.loadPopupForm(args.event);
-//   //       // set popup options
-//   //       this.popupHeaderText = 'New Event';
-//   //       this.popupButtons = this.popupAddButtons;
-//   //       this.popupAnchor = args.target;
-//   //       // open the popup
-//   //       this.popup.open();
-//   //     });
-//   //   },
-//   //   onEventDeleted: (args) => {
-//   //     setTimeout(() => {
-//   //       this.deleteEvent(args.event);
-//   //     });
-//   //   },
+    onEventCreated: (args) => {
+      setTimeout(() => {
+        this.isEdit = false;
+        this.tempEvent = args.event;
+        // fill popup form with event data
+        this.loadPopupForm(args.event);
+        // set popup options
+        this.popupHeaderText = 'New Event';
+        this.popupButtons = this.popupAddButtons;
+        this.popupAnchor = args.target;
+        // open the popup
+        this.popup.open();
+      });
+    },
+    onEventDeleted: (args) => {
+      setTimeout(() => {
+        this.deleteEvent(args.event);
+      });
+    },
 //   //   onEventUpdated: () => {
 //   //     // here you can update the event in your storage as well, after drag & drop or resize
 //   //     // ...
