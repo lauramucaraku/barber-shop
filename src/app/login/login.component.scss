@@ -1,0 +1,129 @@
+*, *:before, *:after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+  background: #ededed;
+}
+
+input, button {
+  border: none;
+  outline: none;
+  background: none;
+  font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+}
+
+$contW: auto;
+$imgW: auto;
+$formW: $contW - $imgW;
+$switchAT: 1.2s;
+
+$inputW: 240px;
+$btnH: 36px;
+
+$diffRatio: ($contW - $imgW) / $contW;
+
+@mixin signUpActive {
+  .cont.s--signup & {
+    @content;
+  }
+}
+
+
+.cont {
+  overflow: hidden;
+  position: relative;
+  width: $contW;
+  height: 740px;
+  margin-left: 0;
+  background: #fff;
+}
+
+@media screen and (max-width: 844px) {
+  .cont {
+    height: 100vh;
+  }
+}
+
+.form {
+  position: relative;
+  width: $formW;
+  height: 100%;
+  transition: transform $switchAT ease-in-out;
+  padding-left: 0;
+}
+
+button {
+  display: block;
+  margin: 0;
+  width: $inputW;
+  height: $btnH;
+  border-radius: 30px;
+  color: #fff;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+h2 {
+  width: 100%;
+  font-size: 26px;
+  text-align: start;
+  color: #263238;
+  margin-top: 40px;
+  margin-left: 55px;
+}
+
+label {
+  display: block;
+  width: $inputW;
+  margin-left: 20px;
+  text-align: center;
+
+  span {
+    font-size: 12px;
+    color: #cfcfcf;
+    text-transform: uppercase;
+  }
+}
+
+input {
+  display: block;
+  width: 100%;
+  margin-top: 5px;
+  padding-bottom: 5px;
+  font-size: 16px;
+  border-bottom: 1px solid rgba(0,0,0,0.4);
+  text-align: center;
+}
+
+.submit {
+  margin-top: 40px;
+  margin-left: 20px;
+  margin-bottom: 20px;
+  background: #d4af7a;
+  text-transform: uppercase;
+}
+
+.submit:hover {
+  background: #263238;
+}
+
+.fb-btn {
+  margin-left: 20px;
+  border: 2px solid #d3dae9;
+  color: darken(#d3dae9, 20%);
+
+  span {
+    font-weight: bold;
+    color: darken(#768cb6, 20%);
+  }
+}
+
+.fb-btn:hover {
+  background: #263238;
+}
+
+
