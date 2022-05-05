@@ -1,14 +1,11 @@
-<!--<h3 class="header">Barber Shop</h3>-->
-<div class="card table-responsive-sm" *ngFor="let i of nrOfPictures">
-  <img src="{{i.imgSrc}}"
-       class="card-img-top" alt="No image">
-  <div class="card-body">
-    <p class="card-text fw-bold">{{i.title}}</p>
-    <p class="card-text">{{i.description}}</p>
-  </div>
-</div>
-
-<!--<footer class="text-center text-lg-start bg-light text-muted">-->
+<ngb-carousel class="table-responsive-sm">
+  <ng-template ngbSlide *ngFor="let i of nrOfPictures">
+    <div class="picsum-img-wrapper">
+      <img [src]="i.imgSrc" alt="No img" class="card-img-top imageClass">
+    </div>
+  </ng-template>
+</ngb-carousel>
+<br><br>
 <footer class="table-responsive-sm">
   <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
     <div>
