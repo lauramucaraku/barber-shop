@@ -21,6 +21,11 @@ import { LoginComponent } from './login/login.component';
 import { SettingsComponent } from './settings/settings.component';
 
 import { HttpClientModule, HttpClientJsonpModule } from '@angular/common/http';
+import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
+import { environment } from '../environments/environment';
+import { provideDatabase,getDatabase } from '@angular/fire/database';
+import { ReactiveFormsModule} from "@angular/forms";
+import { HotToastModule } from '@ngneat/hot-toast';
 
 
 // import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
@@ -36,8 +41,8 @@ import { HttpClientModule, HttpClientJsonpModule } from '@angular/common/http';
     LoginComponent,
     SettingsComponent
   ],
-  imports: [ 
-    MbscModule, 
+  imports: [
+    MbscModule,
     FormsModule,
     BrowserModule,
     AppRoutingModule,
@@ -49,7 +54,11 @@ import { HttpClientModule, HttpClientJsonpModule } from '@angular/common/http';
     MatInputModule,
     MatToolbarModule,
     HttpClientModule,
-    HttpClientJsonpModule
+    HttpClientJsonpModule,
+    provideFirebaseApp(() => initializeApp(environment.firebase)),
+    provideDatabase(() => getDatabase()),
+    ReactiveFormsModule,
+    HotToastModule.forRoot(),
     // NgbModule
   ],
   providers: [],
