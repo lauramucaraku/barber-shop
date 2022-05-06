@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "barbershopapp-36a81"
+  },
+  "targets": {
+    "barbershopapp-36a81": {
+      "hosting": {
+        "barber-shop-project": [
+          "barbershopapp-36a81"
+        ]
+      }
+    }
+  }
+}

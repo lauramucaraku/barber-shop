@@ -2,7 +2,14 @@ import { Component, OnInit,ViewChild } from '@angular/core';
 
 import { MbscEventcalendarOptions, Notifications, MbscCalendarEvent,MbscDatepickerOptions, MbscPopup,
   MbscPopupOptions,setOptions } from '@mobiscroll/angular';
-import { HttpClient } from '@angular/common/http';
+import * as moment from 'moment';
+
+
+import {EventService} from "../services/event.service";
+
+
+
+
 
 setOptions({
   theme: 'material',
@@ -17,9 +24,9 @@ setOptions({
   providers: [Notifications]
 })
 export class ScheduleComponent implements OnInit {
-
-  constructor(private http: HttpClient, private notify: Notifications) { }
-
+  session : any;
+  id: any;
+  constructor( private notify: Notifications, private _eventService: EventService) { }
 
   @ViewChild('popup', { static: false })
   popup!: MbscPopup;
@@ -119,9 +126,11 @@ export class ScheduleComponent implements OnInit {
       });
     },
     onEventUpdated: () => {
-      // mund te besh update eventin ne storage pasi ta kesh ber edit
-      // ...
+
+      // localStorage.setItem('barber-app:events', JSON.stringify(this.myEvents))
+
     }
+
   };
   popupHeaderText!: string;
   popupAnchor: HTMLElement | undefined;
@@ -138,6 +147,7 @@ export class ScheduleComponent implements OnInit {
       this.saveEvent();
     },
     keyCode: 'enter',
+
     text: 'Save',
     cssClass: 'mbsc-popup-button-primary'
   }];
@@ -205,37 +215,51 @@ export class ScheduleComponent implements OnInit {
       }
     }
   };
+
+
+  saveEvent(): void {
+    this.tempEvent.title = this.popupEventTitle;
+    this.tempEvent['description'] = this.popupEventDescription;
+    this.tempEvent.start = moment(this.popupEventDates[0].toISOString()).add(2,"hours").toISOString();
+    this.tempEvent.end = moment(this.popupEventDates[1].toISOString()).add(2,"hours").toISOString();
+    this.tempEvent.allDay = this.popupEventAllDay;
+    this.tempEvent['status'] = this.popupEventStatus;
+    this.tempEvent.color = this.selectedColor;
+    if (this.isEdit) {
+      // update the event in the list
+      // this.myEvents = [...this.myEvents];
+      // this.myEvents = this._eventService.saveEvent(this.tempEvent as any);
+      // localStorage.setItem('token',JSON.stringify(this.myEvents) );
+    } else {
+
+      this.myEvents = this._eventService.addEvent(this.tempEvent as any);
+
+    }
+
+    // navigate the calendar
+    this.calendarSelectedDate = this.popupEventDates[0];
+    // close the popup
+    this.popup.close();
+  }
+
+
+
+
+
   loadPopupForm(event: MbscCalendarEvent): void {
+
+
     this.popupEventTitle = event.title;
     this.popupEventDescription = event['description'];
     this.popupEventDates = [event.start, event.end];
     this.popupEventAllDay = event.allDay || false;
     this.popupEventStatus = event['status'] || 'busy';
     this.selectedColor = event.color || '';
-  }
-  saveEvent(): void {
-    this.tempEvent.title = this.popupEventTitle;
-    this.tempEvent['description'] = this.popupEventDescription;
-    this.tempEvent.start = this.popupEventDates[0];
-    this.tempEvent.end = this.popupEventDates[1];
-    this.tempEvent.allDay = this.popupEventAllDay;
-    this.tempEvent['status'] = this.popupEventStatus;
-    this.tempEvent.color = this.selectedColor;
-    if (this.isEdit) {
-      // update the event in the list
-      this.myEvents = [...this.myEvents];
-      // here you can update the event in your storage as well
-      // ...
-    } else {
-      // add the new event to the list
-      this.myEvents = [...this.myEvents, this.tempEvent];
-      // here you can add the event to your storage as well
-      // ...
-    }
-    // navigate the calendar
-    this.calendarSelectedDate = this.popupEventDates[0];
-    // close the popup
-    this.popup.close();
+
+
+
+
+
   }
   deleteEvent(event: MbscCalendarEvent): void {
     this.myEvents = this.myEvents.filter(item => item.id !== event.id);
@@ -249,6 +273,7 @@ export class ScheduleComponent implements OnInit {
       message: 'Event deleted'
     });
     // here you can delete the event from your storage as well
+
     // ...
   }
   onDeleteClick(): void {
@@ -278,7 +303,11 @@ export class ScheduleComponent implements OnInit {
   }
 
 
+
+
+
 ngOnInit(): void {
-  }
+
+}
 
 }
