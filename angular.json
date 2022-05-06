@@ -106,6 +106,16 @@
             ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {
+            "prerender": false,
+            "ssr": false,
+            "browserTarget": "barber-shop-project:build:production",
+            "firebaseProject": "barbershopapp-36a81",
+            "firebaseHostingSite": "barbershopapp-36a81"
+          }
         }
       }
     }

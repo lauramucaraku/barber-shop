@@ -1,12 +1,11 @@
-
 <mbsc-eventcalendar [data]="myEvents" [options]="calendarOptions" [(selectedDate)]="calendarSelectedDate"
                     [view]="{
         schedule: {
             type: 'day',
-            startDay: 1,
-            endDay: 5,
+            startDay: 0,
+            endDay: 6,
             startTime: '09:00',
-              endTime: '19:00',
+              endTime: '23:00',
             timeCellStep: 60,
             timeLabelStep: 60
         }
@@ -14,25 +13,32 @@
 ></mbsc-eventcalendar>
 <mbsc-popup [options]="popupOptions" [anchor]="popupAnchor" [buttons]="popupButtons" [headerText]="popupHeaderText" #popup>
   <div class="mbsc-form-group">
-    <mbsc-input label="Title" [(ngModel)]="popupEventTitle"></mbsc-input>
-    <mbsc-textarea label="Description" [(ngModel)]="popupEventDescription"></mbsc-textarea>
+    <mbsc-input label="Emer Mbiemer" [(ngModel)]="popupEventTitle"></mbsc-input>
+    <mbsc-textarea label="Nr tel" [(ngModel)]="popupEventDescription"></mbsc-textarea>
+    <mat-selection-list>
+      <mbsc-checkbox label="Haircut (45 min)"></mbsc-checkbox>
+      <mbsc-checkbox label="Trajtim Fytyre (5 min)"></mbsc-checkbox>
+      <mbsc-checkbox label=" Stilim i mjekrres (10 min)"></mbsc-checkbox>
+      <mbsc-checkbox label="Maske Fytyre (5 min)"></mbsc-checkbox>
+      <mbsc-checkbox label="Stlim flokesh (10 min)"></mbsc-checkbox>
+    </mat-selection-list>
   </div>
   <div class="mbsc-form-group">
-    <mbsc-switch label="All-day" [(ngModel)]="popupEventAllDay"></mbsc-switch>
+    <mbsc-switch label="Gjithe diten" [(ngModel)]="popupEventAllDay"></mbsc-switch>
     <mbsc-datepicker [(ngModel)]="popupEventDates" [options]="datePickerOptions" [controls]="popupEventAllDay ? datePickerControls : datetimePickerControls" [responsive]="popupEventAllDay ? datePickerResponsive : datetimePickerResponsive" [startInput]="startInput"
                      [endInput]="endInput"></mbsc-datepicker>
-    <mbsc-input #startInput label="Starts"></mbsc-input>
-    <mbsc-input #endInput label="Ends"></mbsc-input>
+    <mbsc-input #startInput label="Fillimi"></mbsc-input>
+    <mbsc-input #endInput label="Perfundimi"></mbsc-input>
     <div class="event-color-c" (click)="openColorPicker($event)">
       <div class="event-color-label">Color</div>
       <div class="event-color" [ngStyle]="{background: selectedColor}"></div>
     </div>
     <mbsc-segmented-group [(ngModel)]="popupEventStatus">
-      <mbsc-segmented value="busy">Show as busy</mbsc-segmented>
-      <mbsc-segmented value="free">Show as free</mbsc-segmented>
+      <mbsc-segmented value="busy">Shfaq si e zene</mbsc-segmented>
+      <mbsc-segmented value="free">Shfaq si e lire</mbsc-segmented>
     </mbsc-segmented-group>
     <div *ngIf="isEdit" class="mbsc-button-group">
-      <mbsc-button class="mbsc-button-block" color="danger" variant="outline" (click)="onDeleteClick()">Delete event
+      <mbsc-button class="mbsc-button-block" color="danger" variant="outline" (click)="onDeleteClick()">Anuloje takimin
       </mbsc-button>
     </div>
   </div>
