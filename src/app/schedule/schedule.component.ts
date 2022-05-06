@@ -45,43 +45,7 @@ export class ScheduleComponent implements OnInit {
   colors = ['#ffeb3c', '#ff9900', '#f44437', '#ea1e63', '#9c26b0', '#3f51b5', '', '#009788', '#4baf4f', '#7e5d4e'];
 
 
-  myEvents: MbscCalendarEvent[] = [{
-    id: 1,
-    start: '2022-04-08T13:00',
-    end: '2022-04-08T13:45',
-    title: 'Lunch @ Butcher\'s',
-    description: '',
-    allDay: false,
-    free: true,
-    color: '#009788'
-  }, {
-    id: 2,
-    start: '2022-04-30T15:00',
-    end: '2022-04-30T16:00',
-    title: 'General orientation',
-    description: '',
-    allDay: false,
-    free: false,
-    color: '#ff9900'
-  }, {
-    id: 3,
-    start: '2022-04-29T18:00',
-    end: '2022-04-29T22:00',
-    title: 'Dexter BD',
-    description: '',
-    allDay: false,
-    free: true,
-    color: '#3f51b5'
-  }, {
-    id: 4,
-    start: '2022-05-01T10:30',
-    end: '2022-05-01T11:30',
-    title: 'Stakeholder mtg.',
-    description: '',
-    allDay: false,
-    free: false,
-    color: '#f44437'
-  }];
+  myEvents: MbscCalendarEvent[] = this._eventService.getEvents();
 
   tempEvent!: MbscCalendarEvent;
   calendarOptions: MbscEventcalendarOptions = {
