@@ -16,19 +16,14 @@
     <mbsc-input label="Emer Mbiemer" [(ngModel)]="popupEventTitle"></mbsc-input>
     <mbsc-textarea label="Nr tel" [(ngModel)]="popupEventDescription"></mbsc-textarea>
     <mat-selection-list>
-      <mbsc-checkbox label="Haircut (45 min)"></mbsc-checkbox>
-      <mbsc-checkbox label="Trajtim Fytyre (5 min)"></mbsc-checkbox>
-      <mbsc-checkbox label=" Stilim i mjekrres (10 min)"></mbsc-checkbox>
-      <mbsc-checkbox label="Maske Fytyre (5 min)"></mbsc-checkbox>
-      <mbsc-checkbox label="Stlim flokesh (10 min)"></mbsc-checkbox>
+      <mbsc-checkbox *ngFor="let service of serviceData; index as i" label="{{service.name}}"
+                     (click)="calculateTime(service, i)"></mbsc-checkbox>
     </mat-selection-list>
   </div>
   <div class="mbsc-form-group">
     <mbsc-switch label="Gjithe diten" [(ngModel)]="popupEventAllDay"></mbsc-switch>
-    <mbsc-datepicker [(ngModel)]="popupEventDates" [options]="datePickerOptions" [controls]="popupEventAllDay ? datePickerControls : datetimePickerControls" [responsive]="popupEventAllDay ? datePickerResponsive : datetimePickerResponsive" [startInput]="startInput"
-                     [endInput]="endInput"></mbsc-datepicker>
+    <mbsc-datepicker [(ngModel)]="popupEventDates" [options]="datePickerOptions" [controls]="popupEventAllDay ? datePickerControls : datetimePickerControls" [responsive]="popupEventAllDay ? datePickerResponsive : datetimePickerResponsive" [startInput]="startInput"></mbsc-datepicker>
     <mbsc-input #startInput label="Fillimi"></mbsc-input>
-    <mbsc-input #endInput label="Perfundimi"></mbsc-input>
     <div class="event-color-c" (click)="openColorPicker($event)">
       <div class="event-color-label">Color</div>
       <div class="event-color" [ngStyle]="{background: selectedColor}"></div>
