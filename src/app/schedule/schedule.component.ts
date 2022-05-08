@@ -2,6 +2,7 @@ import { Component, OnInit,ViewChild } from '@angular/core';
 import { MbscEventcalendarOptions, Notifications, MbscCalendarEvent,MbscDatepickerOptions, MbscPopup, MbscPopupOptions,setOptions } from '@mobiscroll/angular';
 import * as moment from 'moment';
 import {EventService} from "../services/event.service";
+import {servicesData} from "./services-data";
 
 setOptions({
   theme: 'material',
@@ -17,7 +18,12 @@ setOptions({
 export class ScheduleComponent implements OnInit {
   session : any;
   id: any;
-  constructor( private notify: Notifications, private _eventService: EventService) { }
+  serviceData = servicesData;
+  selectedServices: any[] = [];
+  duration: number;
+  constructor( private notify: Notifications, private _eventService: EventService) {
+    this.duration = 0;
+  }
 
   @ViewChild('popup', { static: false })
   popup!: MbscPopup;
@@ -164,7 +170,7 @@ export class ScheduleComponent implements OnInit {
     this.tempEvent.title = this.popupEventTitle;
     this.tempEvent['description'] = this.popupEventDescription;
     this.tempEvent.start = moment(this.popupEventDates[0].toISOString()).add(2,"hours").toISOString();
-    this.tempEvent.end = moment(this.popupEventDates[1].toISOString()).add(2,"hours").toISOString();
+    this.tempEvent.end = moment(this.tempEvent.start).add(this.duration, 'minutes').toISOString();
     this.tempEvent.allDay = this.popupEventAllDay;
     this.tempEvent['status'] = this.popupEventStatus;
     this.tempEvent.color = this.selectedColor;
@@ -224,6 +230,18 @@ export class ScheduleComponent implements OnInit {
       this.selectedColor = color;
       this.colorPicker.close();
     }
+  }
+
+  calculateTime(service: {}, index: number): number {
+    this.serviceData[index].isSelected = ! this.serviceData[index].isSelected;
+    if(this.serviceData[index].isSelected) {
+      this.duration += this.serviceData[index].time;
+      this.selectedServices.push(service);
+    } else if (!this.serviceData[index].isSelected) {
+      this.duration -= this.serviceData[index].time;
+      this.selectedServices.push(service);
+    }
+    return 0;
   }
 
 ngOnInit(): void {}
