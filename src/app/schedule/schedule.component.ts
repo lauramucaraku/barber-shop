@@ -1,14 +1,22 @@
 import { Component, OnInit,ViewChild } from '@angular/core';
-import { MbscEventcalendarOptions, Notifications, MbscCalendarEvent,MbscDatepickerOptions, MbscPopup, MbscPopupOptions,setOptions } from '@mobiscroll/angular';
+import {
+  MbscEventcalendarOptions,
+  Notifications,
+  MbscCalendarEvent,
+  MbscDatepickerOptions,
+  MbscPopup,
+  MbscPopupOptions,
+  setOptions,
+} from '@mobiscroll/angular';
 import * as moment from 'moment';
 import {EventService} from "../services/event.service";
 import {servicesData} from "./services-data";
+
 
 setOptions({
   theme: 'material',
   themeVariant: 'light'
 });
-
 @Component({
   selector: 'app-schedule',
   templateUrl: './schedule.component.html',
@@ -44,6 +52,8 @@ export class ScheduleComponent implements OnInit {
   tempEvent!: MbscCalendarEvent;
 
   calendarOptions: MbscEventcalendarOptions = {
+
+
     clickToCreate: 'double',
     dragToCreate: true,
     dragToMove: true,
@@ -79,6 +89,8 @@ export class ScheduleComponent implements OnInit {
     },
     onEventUpdated: () => {
       // localStorage.setItem('barber-app:events', JSON.stringify(this.myEvents))
+      // this.myEvents = this._eventService.addEvent(this.tempEvent as any);
+      this.myEvents = [... this.myEvents];
     }
 
   };
@@ -165,20 +177,19 @@ export class ScheduleComponent implements OnInit {
       }
     }
   };
-
   saveEvent(): void {
     this.tempEvent.title = this.popupEventTitle;
     this.tempEvent['description'] = this.popupEventDescription;
-    this.tempEvent.start = moment(this.popupEventDates[0].toISOString()).add(2,"hours").toISOString();
+    this.tempEvent.start = moment(this.popupEventDates[0]).add(2,"hours").toISOString();
     this.tempEvent.end = moment(this.tempEvent.start).add(this.duration, 'minutes').toISOString();
     this.tempEvent.allDay = this.popupEventAllDay;
     this.tempEvent['status'] = this.popupEventStatus;
     this.tempEvent.color = this.selectedColor;
     if (this.isEdit) {
       // update the event in the list
-      // this.myEvents = [...this.myEvents];
-      // this.myEvents = this._eventService.saveEvent(this.tempEvent as any);
-      // localStorage.setItem('token',JSON.stringify(this.myEvents) );
+      this.tempEvent.start = moment(this.popupEventDates[0]).add(0,"hours").toISOString();
+      this.tempEvent.end = moment(this.tempEvent.start).add(this.duration, 'minutes').toISOString();
+      this.myEvents = this._eventService.saveEvent(this.tempEvent as any);
     } else {
       this.myEvents = this._eventService.addEvent(this.tempEvent as any);
     }
