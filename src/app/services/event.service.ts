@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import {MbscCalendarEvent} from "@mobiscroll/angular";
 
 export interface EventModel {
   id: number;
@@ -60,6 +61,18 @@ export class EventService {
     events.push({ ...event, id });
     localStorage.setItem(LOCALSTORAGE_EVENTS, JSON.stringify(events));
     return events;
+  }
+
+  deleteEvent(event: MbscCalendarEvent) {
+
+    // const events: EventModel[] = this.getEvents();
+    // let newEvents: EventModel[] = [];
+    // if(events.length) {
+    //   newEvents = events.filter((evt)=> evt.title != event.title);
+    // }
+    // const toBeDeleted = this.getEventById(event.id as number);
+    localStorage.removeItem(LOCALSTORAGE_EVENTS);
+    // return newEvents;
   }
 
 }

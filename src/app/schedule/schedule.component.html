@@ -2,7 +2,7 @@
                     [view]="{
         schedule: {
             type: 'day',
-            startDay: 0,
+            startDay: 1,
             endDay: 6,
             startTime: '09:00',
               endTime: '23:00',
@@ -13,10 +13,10 @@
 ></mbsc-eventcalendar>
 <mbsc-popup [options]="popupOptions" [anchor]="popupAnchor" [buttons]="popupButtons" [headerText]="popupHeaderText" #popup>
   <div class="mbsc-form-group">
-    <mbsc-input label="Emer Mbiemer" [(ngModel)]="popupEventTitle"></mbsc-input>
-    <mbsc-textarea label="Nr tel" [(ngModel)]="popupEventDescription"></mbsc-textarea>
+    <mbsc-input label="Emer Mbiemer, Nr tel" [(ngModel)]="popupEventTitle"></mbsc-input>
+    <mbsc-input label="Sherbimet" [(ngModel)]="popupEventDescription"></mbsc-input>
     <mat-selection-list>
-      <mbsc-checkbox *ngFor="let service of serviceData; index as i" label="{{service.name}}"
+      <mbsc-checkbox *ngFor="let service of serviceData; index as i" label="{{service.name}} - {{service.time}} min"
                      (click)="calculateTime(service, i)"></mbsc-checkbox>
     </mat-selection-list>
   </div>

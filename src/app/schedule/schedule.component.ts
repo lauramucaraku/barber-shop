@@ -52,8 +52,6 @@ export class ScheduleComponent implements OnInit {
   tempEvent!: MbscCalendarEvent;
 
   calendarOptions: MbscEventcalendarOptions = {
-
-
     clickToCreate: 'double',
     dragToCreate: true,
     dragToMove: true,
@@ -80,7 +78,7 @@ export class ScheduleComponent implements OnInit {
         this.popupButtons = this.popupAddButtons;
         this.popupAnchor = args.target;
         this.popup.open();
-      });
+        });
     },
     onEventDeleted: (args) => {
       setTimeout(() => {
@@ -186,7 +184,6 @@ export class ScheduleComponent implements OnInit {
     this.tempEvent['status'] = this.popupEventStatus;
     this.tempEvent.color = this.selectedColor;
     if (this.isEdit) {
-      // update the event in the list
       this.tempEvent.start = moment(this.popupEventDates[0]).add(0,"hours").toISOString();
       this.tempEvent.end = moment(this.tempEvent.start).add(this.duration, 'minutes').toISOString();
       this.myEvents = this._eventService.saveEvent(this.tempEvent as any);
@@ -198,8 +195,15 @@ export class ScheduleComponent implements OnInit {
   }
 
   loadPopupForm(event: MbscCalendarEvent): void {
+    let description = '';
+    for(let item of this.serviceData) {
+      if(item.isSelected) {
+        description += item.name+', ';
+      }
+    }
     this.popupEventTitle = event.title;
-    this.popupEventDescription = event['description'];
+    // this.popupEventDescription = event['description'];
+    this.popupEventDescription = description;
     this.popupEventDates = [event.start, event.end];
     this.popupEventAllDay = event.allDay || false;
     this.popupEventStatus = event['status'] || 'busy';
@@ -212,6 +216,8 @@ export class ScheduleComponent implements OnInit {
       button: {
         action: () => {
           this.myEvents = [...this.myEvents, event];
+          this._eventService.deleteEvent(event);
+          // localStorage.removeItem('barber-app:events');
         },
         text: 'Undo'
       },
