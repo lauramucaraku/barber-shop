@@ -45,16 +45,18 @@ export class EventService {
     return events;
   }
 
+
   saveEvent(event: Omit<EventModel, 'id'>): EventModel[] {
     const events: EventModel[] = this.getEvents();
     let id: number;
     if (events.length) {
       const lastEvent: EventModel = events.pop() as EventModel;
-      id = lastEvent.id ;
-      events.push(lastEvent);
+      id = lastEvent.id + 1 ;
+      events.push(lastEvent)
     } else {
       id = 1;
     }
+    events.splice(-1, 1);
     events.push({ ...event, id });
     localStorage.setItem(LOCALSTORAGE_EVENTS, JSON.stringify(events));
     return events;
