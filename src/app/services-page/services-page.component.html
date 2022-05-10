@@ -1,36 +1,105 @@
-<form class="example-form d-flex flex-column table-responsive-sm">
-      <mat-form-field class="example-full-width" appearance="fill">
-          <input type="text" name="emri" id="emri" matInput placeholder="Emer Mbiemer">
-          <mat-icon matSuffix>mode_edit</mat-icon>
-      </mat-form-field>
-      <mat-form-field class="example-full-width" appearance="fill">
-          <span matPrefix>+355 &nbsp;</span>
-          <input type="tel" name="cel" id="numriTel" matInput placeholder="XXXXXXXXX">
-          <mat-icon matSuffix>mode_edit</mat-icon>
-      </mat-form-field>
-  </form>
-
-    <mat-selection-list #services1>
-        <mat-list-option *ngFor="let service of services; index as i" (click)="changeSelectedStatus(service, i)" color="primary">
-            {{service.name}} ({{service.time}} min)
-        </mat-list-option>
-    </mat-selection-list>
-  <p class="d-flex justify-content-center">
-      Koha: {{appointmentTime}} min
-  </p>
-<div align="center">
-  <button mat-flat-button color="primary" *ngIf="selectedServices.length===0 else notDisabled" disabled (click)="addAppointnment()">
-      Shto
-  </button>
-</div>
-  <ng-template #notDisabled align="center">
-      <button mat-flat-button color="primary" (click)="addAppointnment()">Shto</button>
-  </ng-template>
 
 
 
+<body class="bbody">
+<section>
+  <p><br><br><br><br><br></p>
+</section>
 
+<section class="table1 cid-qRJwRvPCLD" id="table1-17">
+  <div class="container">
+    <div class="title-wrap align-center">
+      <h1 class="mbr-section-title mbr-fonts-style display-2">
+        Prices
+      </h1>
+      <div class="underline">
+        <div class="line"></div>
+      </div>
+      <h2 class="mbr-section-subtitle mbr-fonts-style mbr-light display-7">
+        What we offer
+      </h2>
+    </div>
+    <div class="mbr-row mbr-justify-content-center">
+      <div class="mbr-col-sm-12 mbr-col-md-12 mbr-col-lg-12 ">
+        <div class="wrapscroll">
+          <div class="scroll">
+            <table cellspacing="0" class="table mbr-text mbr-fonts-style" width="100%">
+              <thead>
+              <tr>
+                <th>
+                  <p class="mbr-text tabletitle mbr-fonts-style align-left display-7">
+                    SERVICE</p>
+                </th><th>
+                <p class="mbr-text tabletitle mbr-fonts-style align-left display-7">
+                  ~TIME
+                </p>
+              </th><th>
+                <p class="mbr-text tabletitle mbr-fonts-style align-left display-7">
+                  PRICE
+                </p>
+              </th></tr>
+              </thead>
+              <tbody>
+              <tr>
+                <td>
+                  <p class="mbr-text mbr-fonts-style display-7">
+                  Qethje</p>
+                </td><td>
+                <p class="mbr-text mbr-fonts-style display-7">
+                  15 min
+                </p>
+              </td><td>
+                <p class="mbr-text mbr-fonts-style display-7">
+                  $ 15
+                </p>
+              </td></tr><tr>
 
+                <td>
+                  <p class="mbr-text mbr-fonts-style display-7">
+                     Stilim Mjekrre</p>
+                </td><td>
+                <p class="mbr-text mbr-fonts-style display-7">
+                  15 min
+                </p>
+              </td><td>
+                <p class="mbr-text mbr-fonts-style display-7">
+                  $ 15
+                </p>
+              </td></tr><tr>
 
+                <td>
+                  <p class="mbr-text mbr-fonts-style display-7">
+                    Stilim Flokesh</p>
+                </td><td>
+                <p class="mbr-text mbr-fonts-style display-7">
+                  15 min
+                </p>
+              </td><td>
+                <p class="mbr-text mbr-fonts-style display-7">
+                  $ 15
+                </p>
+              </td></tr><tr>
 
-
+                <td>
+                  <p class="mbr-text mbr-fonts-style display-7">
+                    Maske Fytyre</p>
+                </td><td>
+                <p class="mbr-text mbr-fonts-style display-7">
+                  15 min
+                </p>
+              </td><td>
+                <p class="mbr-text mbr-fonts-style display-7">
+                  $ 15
+                </p>
+              </td></tr></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<footer class="footer">
+<br><br><br><br><br><br><br><br><br>
+</footer>
+</body>
