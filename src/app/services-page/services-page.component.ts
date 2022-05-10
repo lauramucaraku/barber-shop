@@ -16,29 +16,29 @@ export class ServicesPageComponent implements OnInit {
   constructor() {
     this.services = [
       {
-        name: 'hair',
+        name: 'Qethje',
         time: 45,
-        isSelected: false
+        price: 15
       },
       {
-        name: 'asaxaxs',
+        name: 'Trajtim fytyre',
         time: 5,
-        isSelected: false
+        price: 5
       },
       {
-        name: ' stilim',
+        name: 'Stilim i mjekres',
         time: 10,
-        isSelected: false
+        price: 5
       },
       {
-        name: 'Larje',
-        time: 3,
-        isSelected: false
+        name: 'Maske fytyre',
+        time: 5,
+        price: 3
       },
       {
         name: 'Stilim flokesh',
-        time: 7,
-        isSelected: false
+        time: 10,
+        price: 4
       }
     ];
     this.appointmentTime = 0;

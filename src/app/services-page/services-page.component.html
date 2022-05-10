@@ -1,6 +1,3 @@
-
-
-
 <body class="bbody">
 <section>
   <p><br><br><br><br><br></p>
@@ -9,9 +6,6 @@
 <section class="table1 cid-qRJwRvPCLD" id="table1-17">
   <div class="container">
     <div class="title-wrap align-center">
-      <h1 class="mbr-section-title mbr-fonts-style display-2">
-        Prices
-      </h1>
       <div class="underline">
         <div class="line"></div>
       </div>
@@ -28,70 +22,31 @@
               <tr>
                 <th>
                   <p class="mbr-text tabletitle mbr-fonts-style align-left display-7">
-                    SERVICE</p>
+                    SHERBIMI
+                  </p>
                 </th><th>
                 <p class="mbr-text tabletitle mbr-fonts-style align-left display-7">
-                  ~TIME
+                  KOHA
                 </p>
               </th><th>
                 <p class="mbr-text tabletitle mbr-fonts-style align-left display-7">
-                  PRICE
+                  CMIMI
                 </p>
               </th></tr>
               </thead>
               <tbody>
-              <tr>
-                <td>
-                  <p class="mbr-text mbr-fonts-style display-7">
-                  Qethje</p>
-                </td><td>
-                <p class="mbr-text mbr-fonts-style display-7">
-                  15 min
-                </p>
-              </td><td>
-                <p class="mbr-text mbr-fonts-style display-7">
-                  $ 15
-                </p>
-              </td></tr><tr>
-
-                <td>
-                  <p class="mbr-text mbr-fonts-style display-7">
-                     Stilim Mjekrre</p>
-                </td><td>
-                <p class="mbr-text mbr-fonts-style display-7">
-                  15 min
-                </p>
-              </td><td>
-                <p class="mbr-text mbr-fonts-style display-7">
-                  $ 15
-                </p>
-              </td></tr><tr>
-
-                <td>
-                  <p class="mbr-text mbr-fonts-style display-7">
-                    Stilim Flokesh</p>
-                </td><td>
-                <p class="mbr-text mbr-fonts-style display-7">
-                  15 min
-                </p>
-              </td><td>
-                <p class="mbr-text mbr-fonts-style display-7">
-                  $ 15
-                </p>
-              </td></tr><tr>
-
-                <td>
-                  <p class="mbr-text mbr-fonts-style display-7">
-                    Maske Fytyre</p>
-                </td><td>
-                <p class="mbr-text mbr-fonts-style display-7">
-                  15 min
-                </p>
-              </td><td>
-                <p class="mbr-text mbr-fonts-style display-7">
-                  $ 15
-                </p>
-              </td></tr></tbody>
+                <tr *ngFor="let service of services">
+                  <td>
+                    <p class="mbr-text mbr-fonts-style display-7">{{service.name}}</p>
+                  </td>
+                  <td>
+                    <p class="mbr-text mbr-fonts-style display-7">{{service.time}} min</p>
+                  </td>
+                  <td>
+                    <p class="mbr-text mbr-fonts-style display-7">{{service.price | currency}}</p>
+                  </td>
+                </tr>
+              </tbody>
             </table>
           </div>
         </div>
@@ -99,6 +54,7 @@
     </div>
   </div>
 </section>
+
 <footer class="footer">
 <br><br><br><br><br><br><br><br><br>
 </footer>
